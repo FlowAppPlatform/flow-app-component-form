@@ -35,6 +35,7 @@ class FormComponent extends AppComponent {
       showOnComponentsPanel: true,
       isValuable: true,
       allowsChildren: true,
+      allowedChildTypes: ['checkbox', 'container', 'link', 'input', 'search', 'text', 'loader', 'radio', 'map', 'dropdown'],
     };
 
     this.state = Object.assign(this.state, newState); // merge two states together, and dont lose any parent state properties.
