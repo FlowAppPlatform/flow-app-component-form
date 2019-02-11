@@ -1,6 +1,7 @@
 import React from 'react';
-
 import AppComponent from 'flow-app-component';
+
+import './css/theme/default.css';
 
 class FormComponent extends AppComponent {
   constructor() {
@@ -42,7 +43,21 @@ class FormComponent extends AppComponent {
   }
 
   renderContent() {
-    return null;
+    let customStyles = {};
+    if (!this.props.hasChildren) {
+      customStyles = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '70px',
+      };
+    }
+    return (
+      <div className="form-container" style={customStyles}>
+        {!this.props.hasChildren && <span>Drag fields in here</span>}
+        {this.renderChildren()}
+      </div>
+    );
   }
 }
 
